@@ -18,7 +18,7 @@ export default function App() {
 
   function addVerse() {
     axios.get('https://bible-api.com/' + input).then((response) => {
-      setVerses([...verses, response.data]);
+      setVerses([response.data, ...verses]);
       setInput('');
     });
   }
