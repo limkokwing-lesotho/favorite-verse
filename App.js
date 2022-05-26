@@ -9,6 +9,7 @@ import {
 import React, { useState } from 'react';
 import VerseList from './VerseList';
 import { Entypo } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import axios from 'axios';
 
 export default function App() {
@@ -26,7 +27,10 @@ export default function App() {
     <>
       <StatusBar />
       <View style={styles.container}>
-        <Text style={styles.title}>Bible Verse</Text>
+        <View style={styles.header}>
+          <AntDesign name='book' size={37} color='white' />
+          <Text style={styles.title}>Favorite Verses</Text>
+        </View>
         <View style={styles.controls}>
           <TextInput
             style={styles.textInput}
@@ -48,12 +52,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#EEEEEE',
   },
-  title: {
+  header: {
     backgroundColor: '#1877F2',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+  },
+  title: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '500',
-    padding: 15,
+    borderWidth: 2.5,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 3,
+    borderColor: '#fff',
   },
   controls: {
     marginTop: 20,
