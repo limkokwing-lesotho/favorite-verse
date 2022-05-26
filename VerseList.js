@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import React from 'react';
 
 export default function VerseList({ verses }) {
@@ -12,9 +12,9 @@ export default function VerseList({ verses }) {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {verses.map((verse) => transform(verse))}
-    </View>
+    </ScrollView>
   );
 }
 
